@@ -18,4 +18,6 @@ nix-shell
 
 ### Replit
 
-Go to [acmcsuf.com/discord-workshop-replit](acmcsuf.com/discord-workshop-replit) and create a fork.
+Make sure you have a Replit account. You can easily sign up with a GitHub account.
+
+Go to [acmcsuf.com/discord-workshop-replit](acmcsuf.com/discord-workshop-replit) and create a fork on the right panel.
