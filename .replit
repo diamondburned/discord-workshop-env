@@ -3,3 +3,11 @@ hidden = [ "__pycache__", ".git", ".venv" ]
 
 [nix]
 channel = "unstable"
+
+[languages]
+
+[languages.python]
+pattern = "**/{*.py}"
+
+[languages.python.languageServer]
+start = "pyright-langserver --stdio"
