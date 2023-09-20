@@ -46,15 +46,15 @@ def must_get_game(
     Returns the game state for the channel ID, if it exists.
     If create=True, it will create a new game state if one does not exist.
     """
-    # A safety check to ensure we have a valid channel ID before doing anything
-    # with it in our code
+    # A safety check to ensure we have a valid channel ID
+    # before doing anything with it in our code
     assert channel_id is not None
 
     game_state = game_channels.get(channel_id)
     # If there is a channel that doesnt have a game running
     if game_state is None:
-        # If we want to create a new game, create a new game state with the
-        # channel id
+        # If we want to create a new game, create a new game
+        # state with the channel id
         if create:
             game_state = GameState()
             game_channels[channel_id] = game_state
