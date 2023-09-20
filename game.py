@@ -42,10 +42,13 @@ def must_get_game(
     channel_id: int | None,
     create=False,
 ) -> GameState | None:
+    """
+    Returns the game state for the channel ID, if it exists.
+    If create=True, it will create a new game state if one does not exist.
+    """
     # A safety check to ensure we have a valid channel ID before doing anything
     # with it in our code
-    if channel_id is None:
-        return None
+    assert channel_id is not None
 
     game_state = game_channels.get(channel_id)
     # If there is a channel that doesnt have a game running
@@ -61,4 +64,11 @@ def must_get_game(
     if game_state.is_ended():
         return None
 
+    return game_state
+
+
+def create_game(channel_id: int) -> GameState:
+    """Creates a new game state for the channel and returns it"""
+    game_state = must_get_game(channel_id, create=True)
+    assert game_state is not None
     return game_state
