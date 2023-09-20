@@ -67,7 +67,7 @@ def must_get_game(
     return game_state
 
 
-def create_game(channel_id: int) -> GameState:
+def create_game(channel_id: int | None) -> GameState:
     """Creates a new game state for the channel and returns it"""
     game_state = must_get_game(channel_id, create=True)
     assert game_state is not None
